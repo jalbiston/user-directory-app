@@ -96,7 +96,9 @@ header{
 }
 
 
-
+.firstName {
+  text-decoration: underline var(--blue) 3px;
+}
 
 
 .control-btns {
