@@ -1,7 +1,7 @@
 export const data = [
   {
     id: 1,
-    name: { first: "Waylin", last: "Lumsdon" },
+    name: { first: "Winston", last: "Lumsdon" },
     city: "Likiep",
     country: "Marshall Islands",
     employer: "Twinder",

@@ -4,16 +4,18 @@ import {MdArrowForwardIos} from 'react-icons/md'
 import Functionality from "./Functionality"
 import React, { useState } from 'react'
 import {data} from "./data"
+import Edit from './Edit'
+
 
 const Structure = () => {
-  
+  const [editing, setEditing] = useState(false)
   let [cardNumber, setCardNumber] = useState(1)
   
 console.log(cardNumber)
     
 
 
-        return (
+  return (
     <div className="App">
      <header>
        <h1> Home</h1>
@@ -21,19 +23,25 @@ console.log(cardNumber)
      <div className="container">
         <div className="powder">
           {/* functionality parts */}
-        <Functionality cardNumber = {cardNumber}/>
+
+          {editing? <Edit cardNumber= {cardNumber} setEditing = {setEditing} />:(<Functionality cardNumber = {cardNumber}/>)}
+        
         <div className="controls">
             <h3 className="previous-h3"
             onClick ={() => {
               if(cardNumber <= 1){
-                alert("You can't have a negative card, idiot.")
+                alert("You can't have a negative card, idiot!")
               } else {
                 setCardNumber(cardNumber -1)
               }
             }}
             > <MdArrowBackIosNew /> Previous </h3>
             <div className ='control-btns'>
-              <button>Edit</button>
+              <button
+              onClick ={() => {
+                setEditing(true)
+              }}
+              >Edit</button>
               <button>Delete</button>
               <button>New</button>
             </div>
