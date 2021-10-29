@@ -42,7 +42,14 @@ console.log(cardNumber)
                 setEditing(true)
               }}
               >Edit</button>
-              <button>Delete</button>
+              <button
+              onClick ={() => {
+                let num = cardNumber -1
+                console.log(num)
+                data.splice(num, 1)
+                alert(`Why do you have to be so mean?????`)
+              }}
+              >Delete</button>
               <button>New</button>
             </div>
             <h3 className="next-h3"
